@@ -1,0 +1,33 @@
+ prog.c
+
+ Created on:
+ --------------
+ Mar 9, 2013
+
+ Purpose:
+ --------------
+ prog.c is an eeprom programming utility for ATMEL 27C256 32Kx8 home brewed eeprom programmer
+ using IEEE-1284 parallel port interface
+ the programmer hardware connects to a parallel port and using libieee1284 library version: 0.2.11-10build1 (precise)
+    /usr/include/ieee1284.h
+    /usr/lib/i386-linux-gnu/libieee1284.so
+
+ Usage:
+ --------------
+ prog { -r | -w | -x | -q | -h } { -b <bin_file> | -t <S-record_file> } [-s <hex_start_offset>] [-e <hex_end_offset>] [-p <port_id>]
+ 
+    -r  read eeprom
+    -w  write eeprom
+    -x  erase device
+    -q  only query the system: list ieee1284 parallel ports and test programer
+    -h  print help text
+    -b  binary file image for read of write
+    -t  S-record text file for read or write
+    -s  optional start address/offset, 0x0000 if not provided ** ignored for S-record_file
+    -e  optional end address/offset, to end of eeprom if not provided ** ignored for S-record_file
+    -p  use specified ieee1284 port id
+
+ To Do:
+ ---------------
+    1) create S-rec file from EEPROM read
+

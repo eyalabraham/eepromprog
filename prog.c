@@ -1030,7 +1030,7 @@ int writeByte(t_word address, t_byte byte)
 	ieee1284_write_data(port, (unsigned char) byte);	// write data
 	pulseStrobe();										// pulse /WE line to program
 
-	usleep(100);
+	usleep(1000);
 
 	setAddress(address, CS_SET);						// negate CS
 
